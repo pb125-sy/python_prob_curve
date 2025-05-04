@@ -16,14 +16,11 @@ from PyQt5.QtWidgets import (
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        
-        #layout = QVBoxLayout()
+
         self.setWindowTitle("Normal Distribution Curve") 
         
         self.resize(800, 600)
         
-        # Set the central widget of the Window. Widget will expand
-        # to take up all the space in the window by default.
         self.tab_widget = MyTabWidget(self) 
         self.setCentralWidget(self.tab_widget)
         
@@ -35,7 +32,6 @@ class MyTabWidget(QWidget):
         super(QWidget, self).__init__(parent) 
         self.layout = QVBoxLayout(self) 
   
-        # Initialize tab screen 
         self.tabs = QTabWidget() 
         self.tab1 = QWidget() 
         self.tab2 = QWidget() 
@@ -43,13 +39,11 @@ class MyTabWidget(QWidget):
         self.tab4 = QWidget()
         self.tabs.resize(300, 200) 
   
-        # Add tabs 
         self.tabs.addTab(self.tab1, "Between") 
         self.tabs.addTab(self.tab2, "Left Tail") 
         self.tabs.addTab(self.tab3, "Right Tail") 
         self.tabs.addTab(self.tab4, "Both Tails") 
   
-        # Create first tab 
         self.tab1.layout = QVBoxLayout(self) 
         self.tab2.layout = QVBoxLayout(self)
         self.tab3.layout = QVBoxLayout(self) 
